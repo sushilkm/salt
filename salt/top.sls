@@ -3,9 +3,6 @@ base:
     - repositories
     - motd
     - users
-{% if salt['pillar.get']('infrastructure', 'libvirt') == 'cloud' %}
-    - hosts
-{% endif %}
   'roles:ca':
     - match: grain
     - ca
@@ -19,8 +16,10 @@ base:
     - flannel
     - docker
     - reboot
+    - hosts-master
   'roles:kube-minion':
     - match: grain
     - flannel
     - docker
     - kubernetes-minion
+    - hosts-minion
