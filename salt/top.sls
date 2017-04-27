@@ -18,6 +18,7 @@ base:
     - flannel
     - docker
     - reboot
+    - helm
   'roles:kube-minion':
     - match: grain
     - hosts-minion

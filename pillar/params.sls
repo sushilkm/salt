@@ -93,3 +93,8 @@ components:
   proxy:
     # Extra arguments to be passed to kube-proxy.
     args: ''
+
+# Image-name for deploying helm server component
+helm:
+  helm_version: 'v2.3.1'
+  tiller_image: ''
